@@ -1,0 +1,54 @@
+body {
+    display: inline-flex;
+}
+
+.wrapper {
+    display: flex;
+    overflow-x: hidden;
+}
+
+.container {
+    /* height: 100%;
+    width: 100%; */
+    background-color: lightgray;
+    width: 500px;
+    padding-bottom: 1px;
+    position: relative;
+}
+
+.card{
+    margin: 0 4px;
+    padding: 0 10px;
+    border: solid 1px black;
+    background-color:  salmon;
+    height: 25px;
+}
+
+.moveLeft, .moveRight {
+    position: absolute;
+    top: 0;
+    border: solid 1px gray;
+    width: 15px;
+    height: 25px;
+    padding-left: 5px;
+    cursor: default;
+    opacity: 0;
+    background-color: green;
+} 
+
+.container:hover .moveLeft,
+.container:hover .moveRight {
+    opacity: 1;
+    &.is-deactivate {
+        opacity: 0;
+        background-color: red;
+    }
+}
+
+.moveLeft {
+    left:0;
+}
+
+.moveRight {
+    right:0;
+}

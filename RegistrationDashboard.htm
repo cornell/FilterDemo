@@ -1,0 +1,315 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="RegistrationDashboard_fichiers/index.css">
+
+<body class="AnalyticsDashboard">
+    <div class="l-gridCol DashboardHeader">
+
+        <div class="l-gridCol DashboardInfo">
+            <div class="l-gridCol">
+                <div class="DashboardInfo-title">Inscriptions</div>
+                <div class="DashboardInfo-description">Analyser l'activité formation</div>
+            </div>
+        </div>
+
+
+        <div class="l-gridCol DashboardPeriod">
+            <div class="l-gridCol DashboardPeriod-container">
+                <div class="DashboardPeriod-title">Période</div>
+                <div class="DashboardPeriod-startedOnLabel">Au</div>
+                <input class="DashboardPeriod-startedOnText" type="date" placeholder="jj/mm/AAAA" name=""
+                    id="DashboardPeriod-startedOnText" value="2018-12-01">
+                <div class="DashboardPeriod-finishedOnLabel">Du</div>
+                <input class="DashboardPeriod-finishedOnText" type="date" placeholder="jj/mm/AAAA" name=""
+                    id="DashboardPeriod-finishedOnText" value="2019-11-30">
+            </div>
+            <div>
+                <input type="button" class="DashboardPeriod-submit" value="Appliquer">
+            </div>
+        </div>
+    </div>
+
+    <div id="filters" class="filters">
+        <div class="Filter">
+            <div class="Filter-removeAll syficon icon-cancel"></div>
+        </div>
+        <div class="FilterItem">
+            <div class="FilterItem-bodyContainer">
+                <div class="FilterItem-title">Domaine</div>
+                <div class="FilterItem-value">Bretagne</div>
+            </div>
+            <div class="FilterItem-removeContainer">
+                <div class="FilterItem-remove syfIcon icon-cancel"></div>
+            </div>
+        </div>
+        <div class="FilterItem">
+            <div class="FilterItem-bodyContainer">
+                <div class="FilterItem-title">Formation</div>
+                <div class="FilterItem-value">Le golf pour les nuls</div>
+            </div>
+            <div class="FilterItem-removeContainer">
+                <div class="FilterItem-remove syfIcon icon-cancel"></div>
+            </div>
+        </div>
+        <div class="FilterItem">
+                <div class="FilterItem-bodyContainer">
+                    <div class="FilterItem-title">Formation</div>
+                    <div class="FilterItem-value">Le golf pour les nuls</div>
+                </div>
+                <div class="FilterItem-removeContainer">
+                    <div class="FilterItem-remove syfIcon icon-cancel"></div>
+                </div>
+            </div>
+            <div class="FilterItem">
+                    <div class="FilterItem-bodyContainer">
+                        <div class="FilterItem-title">Formation</div>
+                        <div class="FilterItem-value">Le golf pour les nuls</div>
+                    </div>
+                    <div class="FilterItem-removeContainer">
+                        <div class="FilterItem-remove syfIcon icon-cancel"></div>
+                    </div>
+                </div>
+                <div class="FilterItem">
+                        <div class="FilterItem-bodyContainer">
+                            <div class="FilterItem-title">Formation</div>
+                            <div class="FilterItem-value">Le golf pour les nuls</div>
+                        </div>
+                        <div class="FilterItem-removeContainer">
+                            <div class="FilterItem-remove syfIcon icon-cancel"></div>
+                        </div>
+                    </div>
+                    <div class="FilterItem">
+                            <div class="FilterItem-bodyContainer">
+                                <div class="FilterItem-title">Formation</div>
+                                <div class="FilterItem-value">Le golf pour les nuls</div>
+                            </div>
+                            <div class="FilterItem-removeContainer">
+                                <div class="FilterItem-remove syfIcon icon-cancel"></div>
+                            </div>
+                        </div>
+                        <div class="FilterItem">
+                                <div class="FilterItem-bodyContainer">
+                                    <div class="FilterItem-title">Formation</div>
+                                    <div class="FilterItem-value">Le golf pour les nuls</div>
+                                </div>
+                                <div class="FilterItem-removeContainer">
+                                    <div class="FilterItem-remove syfIcon icon-cancel"></div>
+                                </div>
+                            </div>
+    </div>
+    <!-- <div class="scrolling-wrapper-flexbox">
+        <div class="card">Card</div>
+        <div class="card">Card</div>
+        <div class="card">Card</div>
+        <div class="card">Card</div>
+        <div class="card">Card</div>
+        <div class="card">Card</div>
+        <div class="card">Card</div>
+        <div class="card">Card</div>
+        <div class="card">Card</div>
+    </div> -->
+    </div>
+    <div id="kpis">
+        <div class="ana-GraphicKpi">
+            <div class="ana-GraphicKpi-value" id="KpiRegistrationTraineesHandler">57</div>
+            <div class="ana-GraphicKpi-title">Inscrits</div>
+        </div>
+        <div class="ana-GraphicKpi">
+            <div class="ana-GraphicKpi-value" id="KpiRegistrationLearnersHandler">13</div>
+            <div class="ana-GraphicKpi-title">Apprenants</div>
+        </div>
+        <div class="ana-GraphicKpi">
+            <div class="ana-GraphicKpi-value" id="KpiRegistrationTrainingsHandler">13</div>
+            <div class="ana-GraphicKpi-title">Formations</div>
+        </div>
+        <div class="ana-GraphicKpi">
+            <div class="ana-GraphicKpi-value" id="KpiRegistrationSessionsHandler">13</div>
+            <div class="ana-GraphicKpi-title">Sessions</div>
+        </div>
+    </div>
+    <div class="l-gridCol l-graphicCards">
+        <div class="l-gridCol-col8">
+            <div class="l-grid-col2-row1">
+                <div class="ana-GraphicCard" id="ana-GraphicCard-timelineTrendsChart">
+                    <div class="ana-GraphicCard-loader" id="barRegistrationsByDomainChartLoading"
+                        style="display: none;">
+                        <div class="RadAjax-blob-small blob-0-small"></div>
+                        <div class="RadAjax-blob-small blob-1-small"></div>
+                        <div class="RadAjax-blob-small blob-2-small"></div>
+                    </div>
+                    <div class="ana-GraphicCard-title">Evolution des inscriptions</div>
+                    <div id="chart" class="ana-GraphicCard-chart" style="opacity: 1;">
+                        <div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"
+                            class="chartjs-size-monitor">
+                            <div class="chartjs-size-monitor-expand"
+                                style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                            </div>
+                            <div class="chartjs-size-monitor-shrink"
+                                style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                            </div>
+                        </div>
+                        <canvas id="timelineTrendsChart" style="display: block; width: 1235px; height: 315px;"
+                            width="1235" height="315" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="l-flex-row l-height-50p">
+                <div class="l-grid-col1-row1 l-gridCol-col6">
+                    <div class="ana-GraphicCard" id="ana-GraphicCard-barTrainingsMostFollowedChart">
+                        <div class="ana-GraphicCard-loader" id="barRegistrationsByDomainChartLoading"
+                            style="display: none;">
+                            <div class="RadAjax-blob-small blob-0-small"></div>
+                            <div class="RadAjax-blob-small blob-1-small"></div>
+                            <div class="RadAjax-blob-small blob-2-small"></div>
+                        </div>
+                        <div class="ana-GraphicCard-title">Formations les plus suivies</div>
+                        <div id="chart" class="ana-GraphicCard-chart" style="opacity: 1;display: block;">
+                            <div class="ana-GraphicCard-wrapper" style="height: 315px;">
+                                <div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"
+                                    class="chartjs-size-monitor">
+                                    <div class="chartjs-size-monitor-expand"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                        </div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                                <canvas id="barTrainingsMostFollowedChart"
+                                    style="display: block; width: 608px; height: 315px; cursor: default;" width="608"
+                                    height="315" class="chartjs-render-monitor"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-grid-col1-row1 l-gridCol-col6">
+                    <div class="ana-GraphicCard" id="ana-GraphicCard-barTrainingsMostRequestedChart">
+                        <div class="ana-GraphicCard-loader" id="barRegistrationsByDomainChartLoading"
+                            style="display: none;">
+                            <div class="RadAjax-blob-small blob-0-small"></div>
+                            <div class="RadAjax-blob-small blob-1-small"></div>
+                            <div class="RadAjax-blob-small blob-2-small"></div>
+                        </div>
+                        <div class="ana-GraphicCard-title">Formations les plus demandées</div>
+                        <div id="chart" class="ana-GraphicCard-chart" style="opacity: 1;">
+                            <div class="ana-GraphicCard-wrapper" style="height: 15px;">
+                                <div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"
+                                    class="chartjs-size-monitor">
+                                    <div class="chartjs-size-monitor-expand"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                        </div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                                <canvas id="barTrainingsMostRequestedChart"
+                                    style="display: block; width: 608px; height: 15px; cursor: default;" width="608"
+                                    height="15" class="chartjs-render-monitor"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="l-gridCol-col4">
+            <div class="l-grid-col1-row2">
+                <div class="ana-GraphicCard" id="ana-GraphicCard-barRegistrationsByDomainChart">
+                    <div class="ana-GraphicCard-loader" id="barRegistrationsByDomainChartLoading"
+                        style="display: none;">
+                        <div class="RadAjax-blob-small blob-0-small"></div>
+                        <div class="RadAjax-blob-small blob-1-small"></div>
+                        <div class="RadAjax-blob-small blob-2-small"></div>
+                    </div>
+                    <div class="ana-GraphicCard-title">Inscriptions par domaine</div>
+                    <div id="chart" class="ana-GraphicCard-chart" style="opacity: 1;">
+                        <div class="ana-GraphicCard-wrapper" style="height: 45px;">
+                            <div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"
+                                class="chartjs-size-monitor">
+                                <div class="chartjs-size-monitor-expand"
+                                    style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                    <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink"
+                                    style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                    <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                </div>
+                            </div>
+                            <canvas id="barRegistrationsByDomainChart"
+                                style="display: block; width: 608px; height: 45px; cursor: default;" width="608"
+                                height="45" class="chartjs-render-monitor"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="RegistrationDashboard_fichiers/jquery-1.js"></script>
+    <script src="RegistrationDashboard_fichiers/jquery-ui.js"></script>
+    <script src="RegistrationDashboard_fichiers/jquery.js"></script>
+
+    <script src="RegistrationDashboard_fichiers/knockout_002.js"></script>
+    <script src="RegistrationDashboard_fichiers/knockout.js"></script>
+    <script src="RegistrationDashboard_fichiers/tools.js"></script>
+    <script src="RegistrationDashboard_fichiers/chartUtils.js"></script>
+    <script src="RegistrationDashboard_fichiers/chart.js"></script>
+    <script src="RegistrationDashboard_fichiers/loglevel.js"></script>
+    <script src="RegistrationDashboard_fichiers/chartjs-plugin-datalabels.js"></script>
+    <script src="RegistrationDashboard_fichiers/moduleBuilder.js"></script>
+    <script src="RegistrationDashboard_fichiers/logHelper.js"></script>
+    <script src="RegistrationDashboard_fichiers/chartMapper.js"></script>
+    <script src="RegistrationDashboard_fichiers/dashboardRequest.js"></script>
+    <script src="RegistrationDashboard_fichiers/dashboardChart.js"></script>
+    <script src="RegistrationDashboard_fichiers/dashboardFilter.js"></script>
+    <script src="RegistrationDashboard_fichiers/dashboardFilterService.js"></script>
+    <script src="RegistrationDashboard_fichiers/chartHelper.js"></script>
+    <script src="RegistrationDashboard_fichiers/linechart.js"></script>
+    <script src="RegistrationDashboard_fichiers/barchart.js"></script>
+    <script src="RegistrationDashboard_fichiers/index.js"></script>
+
+    <script>
+        var c1 = new syfadis.analytics.charts.DashboardChart({
+            canvasId: "timelineTrendsChart",
+            key: "RegistrationTimelineChartHandler",
+            chartType: syfadis.analytics.charts.types.lineChart,
+            filterBy: null,
+            take: 1
+        }, '');
+
+        var c2 = new syfadis.analytics.charts.DashboardChart({
+            canvasId: "barTrainingsMostFollowedChart",
+            key: "TrainingMostFollowedChartHandler",
+            chartType: syfadis.analytics.charts.types.barChart,
+            filterBy: syfadis.analytics.charts.filters.types.training,
+            take: 10
+        }, 'Formation');
+
+        var c3 = new syfadis.analytics.charts.DashboardChart({
+            canvasId: "barTrainingsMostRequestedChart",
+            key: "TrainingMostRequestedChartHandler",
+            chartType: syfadis.analytics.charts.types.barChart,
+            filterBy: syfadis.analytics.charts.filters.types.training,
+            take: 10
+        }, 'Formation');
+
+        var c4 = new syfadis.analytics.charts.DashboardChart({
+            canvasId: "barRegistrationsByDomainChart",
+            key: "RegistrationByDomainChartHandler",
+            chartType: syfadis.analytics.charts.types.barChart,
+            filterBy: syfadis.analytics.charts.filters.types.domain,
+            take: 20
+        }, 'Domaine');
+        var dashboardCharts = [c1, c2, c3, c4];
+    </script>
+</body>
+
+</html>

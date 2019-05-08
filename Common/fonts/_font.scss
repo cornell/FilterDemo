@@ -1,0 +1,66 @@
+﻿@import "syficon";
+@import "variables";
+@import "mixins";
+
+@font-face { 
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  @include fontdef($OpenSansPath, $OpenSansVersion, 'Regular');
+}
+
+@font-face {
+  font-family: 'OpenSansItalic';
+  font-style: italic;
+  font-weight: 400;
+  @include fontdef($OpenSansPath, $OpenSansVersion, 'Italic');
+}
+
+@font-face {
+  font-family: 'OpenSansBold';
+  font-style: normal;
+  font-weight: 700;
+  @include fontdef($OpenSansPath, $OpenSansVersion, 'Bold');
+}
+
+@font-face {
+  font-family: 'OpenSansLight';
+  font-style: normal;
+  font-weight: 300;
+  @include fontdef($OpenSansPath, $OpenSansVersion, 'Light');
+}
+
+@font-face {
+  font-family: 'OpenSansLightItalic';
+  font-style: italic;
+  font-weight: 300;
+  @include fontdef($OpenSansPath, $OpenSansVersion, 'LightItalic');
+}
+
+@font-face {
+  font-family: 'OpenSansSemiBold';
+  font-style: normal;
+  font-weight: 600;
+  @include fontdef($OpenSansPath, $OpenSansVersion, 'SemiBold');
+}
+
+@font-face {
+  font-family: 'OpenSansItalicSemiBold';
+  font-style: italic;
+  font-weight: 600;
+  @include fontdef($OpenSansPath, $OpenSansVersion, 'SemiBoldItalic');
+}
+
+@font-face {
+  font-family: 'OpenSansExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  @include fontdef($OpenSansPath, $OpenSansVersion, 'ExtraBold');
+}
+
+@font-face {
+  font-family: 'OpenSansItalicExtraBold';
+  font-style: italic;
+  font-weight: 800;
+  @include fontdef($OpenSansPath, $OpenSansVersion, 'ExtraBoldItalic');
+}
