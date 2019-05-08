@@ -2059,10 +2059,27 @@ html, body {
     height: 40px;
 }
 
+.FilterItems{
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    white-space: nowrap;
+}
+
+.scrollHacked {
+    /* -ms-overflow-style: none;  IE 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.scrollHacked::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
 .FilterItem {
-    /* display: inline-block; */
+    display: inline-block;
     border-right: solid #333 1px;
     width: 245px;
+    white-space: nowrap;
 }
 
 .FilterItem-title {
@@ -2078,7 +2095,7 @@ html, body {
 }
 
 .FilterItem-bodyContainer {
-    float: left;
+    display: inline-block;
     height: 40px;
     padding: 5px;
     cursor: default;
@@ -2086,7 +2103,7 @@ html, body {
 }
 
 .FilterItem-removeContainer {
-    float: left;
+    display: inline-block;
     border-left: 0;
     padding: 0 5px;
     cursor: pointer;
